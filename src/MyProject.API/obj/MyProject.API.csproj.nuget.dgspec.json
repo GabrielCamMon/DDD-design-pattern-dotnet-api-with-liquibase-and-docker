@@ -1,0 +1,262 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.API/MyProject.API.csproj": {}
+  },
+  "projects": {
+    "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.API/MyProject.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.API/MyProject.API.csproj",
+        "projectName": "MyProject.API",
+        "projectPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.API/MyProject.API.csproj",
+        "packagesPath": "/home/gcamon/.nuget/packages/",
+        "outputPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gcamon/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Application/MyProject.Application.csproj": {
+                "projectPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Application/MyProject.Application.csproj"
+              },
+              "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Infrastructure/MyProject.Infrastructure.csproj": {
+                "projectPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Infrastructure/MyProject.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.9.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Application/MyProject.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Application/MyProject.Application.csproj",
+        "projectName": "MyProject.Application",
+        "projectPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Application/MyProject.Application.csproj",
+        "packagesPath": "/home/gcamon/.nuget/packages/",
+        "outputPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gcamon/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Domain/MyProject.Domain.csproj": {
+                "projectPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Domain/MyProject.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Domain/MyProject.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Domain/MyProject.Domain.csproj",
+        "projectName": "MyProject.Domain",
+        "projectPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Domain/MyProject.Domain.csproj",
+        "packagesPath": "/home/gcamon/.nuget/packages/",
+        "outputPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gcamon/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Infrastructure/MyProject.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Infrastructure/MyProject.Infrastructure.csproj",
+        "projectName": "MyProject.Infrastructure",
+        "projectPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Infrastructure/MyProject.Infrastructure.csproj",
+        "packagesPath": "/home/gcamon/.nuget/packages/",
+        "outputPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gcamon/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Domain/MyProject.Domain.csproj": {
+                "projectPath": "/home/gcamon/Documents/Dotnet/teste3/MyProject/src/MyProject.Domain/MyProject.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

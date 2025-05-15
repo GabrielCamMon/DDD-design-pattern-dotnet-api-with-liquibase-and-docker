@@ -1,0 +1,57 @@
+# Ignore the build results
+/bin/
+/obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# ASP.NET Core environment
+appsettings.Development.json
+appsettings.Staging.json
+appsettings.Production.json
+appsettings.Local.json
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Docker
+.docker/
+.dockerignore
+
+# Node.js
+node_modules/
+
+# Logs
+*.log
+*.dmp
+*.bak
+
+# User-specific files (Visual Studio for Mac / Rider)
+.idea/
+
+# Local configuration files
+.vscode/
+
+# JetBrains Rider
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp

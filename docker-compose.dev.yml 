@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: myproject-db-dev
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwe123456
+      POSTGRES_DB: postgres
+    ports:
+      - "5434:5432"  # Porta diferente para evitar conflito com produção
+    volumes:
+      - pgdata-dev:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev  # Usa o Dockerfile de desenvolvimento
+    image: myproject-api-dev:latest
+    container_name: myproject-api-dev
+    ports:
+      - "5000:5000"  # Porta de desenvolvimento diretamente
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ./src/MyProject.API:/src/MyProject.API  # Volume para Hot-Reload
+      - /src/MyProject.API/bin  # Evitar conflito de binários
+      - /src/MyProject.API/obj  # Evitar conflito de binários
+volumes:
+  pgdata-dev:

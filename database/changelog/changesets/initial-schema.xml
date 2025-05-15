@@ -1,0 +1,28 @@
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="gabriel">
+        <createTable tableName="Products">
+            <column name="Id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="Name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Price" type="DECIMAL(10,2)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="gabriel">
+        <insert tableName="Products">
+            <column name="Id" valueComputed="gen_random_uuid()"/>
+            <column name="Name" value="Produto Exemplo"/>
+            <column name="Price" value="99.99"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

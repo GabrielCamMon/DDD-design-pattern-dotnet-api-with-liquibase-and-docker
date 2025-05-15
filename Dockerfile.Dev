@@ -1,0 +1,14 @@
+# Dockerfile.dev (Desenvolvimento)
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dev
+WORKDIR /src
+
+# Copiando apenas o arquivo de projeto para cache eficiente
+COPY src/MyProject.API/MyProject.API.csproj ./MyProject.API/
+RUN dotnet restore "MyProject.API/MyProject.API.csproj"
+
+# Copiando o código fonte completo
+COPY src/MyProject.API/. ./MyProject.API/
+WORKDIR /src/MyProject.API
+
+# Definindo o comando padrão para desenvolvimento com Hot-Reload
+CMD ["dotnet", "watch", "run", "--urls", "http://0.0.0.0:5000"]

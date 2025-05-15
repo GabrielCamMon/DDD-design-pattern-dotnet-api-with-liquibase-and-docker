@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:15
+    container_name: myproject-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwe123456
+      POSTGRES_DB: myproject-db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  liquibase:
+    image: liquibase/liquibase:4.26
+    container_name: myproject-liquibase
+    volumes:
+      - ./database/changelog:/liquibase/changelog
+      - ./database/lib:/liquibase/lib
+      - ./database/liquibase.properties:/liquibase/liquibase.properties
+    depends_on:
+      db:
+        condition: service_healthy
+    command: 
+      - --defaults-file=/liquibase/liquibase.properties
+      - update
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: myproject-api
+    depends_on:
+      db:
+        condition: service_healthy
+      liquibase:
+        condition: service_completed_successfully
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=myproject-db;Username=postgres;Password=qwe123456;Pooling=true;Timeout=30;
+    ports:
+      - "5000:8080"
+    restart: unless-stopped
+
+volumes:
+  pgdata:
