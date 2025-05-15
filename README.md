@@ -1,14 +1,17 @@
-MyProject API
+# MyProject API
 
-Description
+![.NET Core](https://img.shields.io/badge/.NET%20Core-6.0-blue)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue)
+![Docker](https://img.shields.io/badge/Docker-20.10+-blue)
+![Liquibase](https://img.shields.io/badge/Liquibase-4.0+-blue)
 
 MyProject is a RESTful API developed with .NET Core following the Domain-Driven Design (DDD) pattern. The application uses PostgreSQL as its database and Liquibase for database version control. The project is set up to run in a Docker environment with Docker Compose.
 
-Project Structure
+## Project Structure
 
 Solution: MyProject
-
-├── docker-compose.yml
+<pre>
+├── docker-compose.yml 
 ├── Dockerfile
 ├── liquibase/
 │   ├── changelog.xml
@@ -29,47 +32,68 @@ Solution: MyProject
         ├── Data/
         └── Repositories/
 
-Prerequisites
+</pre>
 
-Docker and Docker Compose installed
+## Prerequisites
 
-.NET SDK (if you want to run locally without Docker)
+- Docker and Docker Compose installed
+- .NET SDK (if you want to run locally without Docker)
 
-How to Run
+## How to Run
 
-Clone the repository:
+### Using Docker (Recommended)
 
+```bash
+# Clone the repository
 git clone https://github.com/your-username/MyProject.git
 
-Navigate to the project directory:
-
+# Navigate to the project directory
 cd MyProject
 
-Run Docker Compose:
-
+# Build and run the containers
 docker compose up --build
 
-Database Configuration
+Running Locally (Without Docker)
+Set up PostgreSQL database
 
-The database used is PostgreSQL, configured with Liquibase for version control.
+Update connection string in appsettings.json
 
-Connection settings are in appsettings.json.
+Run the API:
 
-API Endpoints
+bash
+dotnet run --project src/MyProject.API
+```
 
-Authentication
+## Database Configuration
 
-POST /api/auth/register: Registers a new user.
+The project uses PostgreSQL with Liquibase for database version control. Connection settings can be found in:
 
-POST /api/auth/login: Logs in and returns a JWT token.
+appsettings.json (for local development)
 
-Products
+Environment variables (for Docker deployment)
 
-GET /api/product: Returns all products.
+## API Endpoints
 
-POST /api/product: Creates a new product.
+### Authentication
+POST /api/auth/register - Registers a new user
 
-License
+POST /api/auth/login - Logs in and returns a JWT token
 
+### Products
+GET /api/product - Returns all products
+
+POST /api/product - Creates a new product
+
+### Development
+To apply new database changes:
+
+Add new changeset files to liquibase/changesets/
+
+Reference them in changelog.xml
+
+The changes will be applied automatically when the container starts
+
+## License
 This project is open source and is licensed under the MIT License.
+
 
